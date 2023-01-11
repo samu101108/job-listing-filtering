@@ -1,4 +1,4 @@
-<script setup>
+<script>
 
 </script>
 
@@ -10,19 +10,6 @@
         <div class="filter__item">
           <div class="filter__item-name">
             <div class="filter__item--text">Frontend</div>
-            <div class="filter__item--btn-close">&times;</div>
-          </div>
-        </div>
-        <div class="filter__item">
-          <div class="filter__item-name">
-            <div class="filter__item--text">CSS</div>
-            <div class="filter__item--btn-close">&times;</div>
-          </div>
-        </div>
-        
-        <div class="filter__item">
-          <div class="filter__item-name">
-            <div class="filter__item--text">JavaScript</div>
             <div class="filter__item--btn-close">&times;</div>
           </div>
         </div>
