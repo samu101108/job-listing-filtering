@@ -36,7 +36,6 @@ export default {
               <span class="company-name"> {{ item.company }}</span>
               <div class="tags">
                 <span v-if="item.new" class="tag tag--new">NEW!</span>
-                &nbsp;
                 <span v-if="item.featured" class="tag tag--feat">FEATURED</span>
               </div>
             </div>
@@ -59,12 +58,12 @@ export default {
             <li class="job-stack--item">Frontend</li>
             <li class="job-stack--item">Senior</li>
             <li class="job-stack--item">HTML</li>
-            <li>
+            <li class="job-stack--languages">
               <div class="job-stack--item" v-for="language in item.languages" :key="language">
                 {{ language }}
               </div>
             </li>
-            <li>
+            <li v-if="item.tools.length > 0" class="job-stack--tools">
               <template v-if="item.tools.length > 0">
                 <div class="job-stack--item" v-for="tool in item.tools" :key="tool">
                   {{ tool }}
@@ -95,7 +94,6 @@ $dark-grayish-cyan-shade: rgba(hsl(180, 8%, 52%), 0.25);
       color: var(--desaturated-dark-cyan);
       font-size: 13px;
       font-weight: 700;
-      margin-right: 16px;
     }
     .tags {
       .tag {
@@ -135,6 +133,15 @@ $dark-grayish-cyan-shade: rgba(hsl(180, 8%, 52%), 0.25);
     }
     .card-middle-top {
       display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
     }
     .job-title {
       font-size: 14px;
@@ -148,6 +155,7 @@ $dark-grayish-cyan-shade: rgba(hsl(180, 8%, 52%), 0.25);
     }
     .job-meta {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 8px;
       padding-block: 16px;
@@ -171,6 +179,7 @@ $dark-grayish-cyan-shade: rgba(hsl(180, 8%, 52%), 0.25);
         flex-wrap: wrap;
         gap: 16px;
       }
+
       &--item{
         font-size: 13px;
         font-weight: 700;
@@ -185,14 +194,17 @@ $dark-grayish-cyan-shade: rgba(hsl(180, 8%, 52%), 0.25);
           cursor: pointer;
         }
       }
+
+      &--languages,
+      &--tools {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
     }
   }
   @media(min-width: 768px) {
     .card{
-      .card--content {
-        display: flex;
-        align-items: center;
-      }
       &--wrapper {
         max-width: 1110px;
         padding: 24px 32px;
@@ -213,6 +225,7 @@ $dark-grayish-cyan-shade: rgba(hsl(180, 8%, 52%), 0.25);
       &--content {
         display: flex;
         justify-content: space-between;
+        gap: 24px;
         .job-meta {
           border-bottom: none;
           margin-bottom: 0;
@@ -229,6 +242,9 @@ $dark-grayish-cyan-shade: rgba(hsl(180, 8%, 52%), 0.25);
     .job-stack {
       display: flex;
       align-items: center;
+      &--list {
+        justify-content: flex-end;
+      }
     }
   }
 }

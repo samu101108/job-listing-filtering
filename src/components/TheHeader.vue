@@ -12,12 +12,28 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .header {
   display: block;
   height: 156px;
   background-color: var(--desaturated-dark-cyan);
   margin-bottom: 32px;
+  picture {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+    }
+  }
+  @media(min-width: 768px) {
+    picture {
+      img {
+        width: initial;
+        object-fit: initial;
+      }
+    } 
+  }
 }
 
 svg {
