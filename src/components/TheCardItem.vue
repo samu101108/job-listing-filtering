@@ -119,6 +119,9 @@ $dark-grayish-cyan-shade: rgba(hsl(180, 8%, 52%), 0.25);
       align-items: center;
       gap: 8px;
       .company-logo {
+        img {
+          width: 100%;
+        }
         width: 50px;
         height: 50px;
         position: absolute;
@@ -197,6 +200,8 @@ $dark-grayish-cyan-shade: rgba(hsl(180, 8%, 52%), 0.25);
           .company-logo {
             position: relative;
             top: initial;
+            width: 88px;
+            height: 88px;
           }
         }
         .card-top {
